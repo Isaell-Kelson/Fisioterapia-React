@@ -21,7 +21,7 @@ const services = [
 ];
 
 export default function Work() {
-    const whatsappNumber = "5581996181228";
+    const whatsappNumber = ""; // WhatsApp number
 
 
     const handleWhatsAppRedirect = () => {

@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
-    const whatsappNumber = "5581996181228";
+    const whatsappNumber = ""; //WhatsApp number
 
     useEffect(() => {
         const button = document.getElementById('whatsapp-button-mobile');
