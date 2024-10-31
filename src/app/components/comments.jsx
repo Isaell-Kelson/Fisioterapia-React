@@ -42,7 +42,7 @@ export default function Comments() {
                 <p className="text-center w-full text-white font-mono text-lg">A satisfação é nosso maior pagamento</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
                     {positiveComments.map(comment => (
-                        <div key={comment.id} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between">
+                        <div key={comment.id} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between max-w-xs mx-auto">
                             <p className="text-lg mb-2">{comment.text}</p>
                             <p className="text-sm text-gray-600">- {comment.author}</p>
                         </div>
