@@ -1,3 +1,4 @@
+'use client';
 import Gallery from "./components/gallery";
 import Header from "./components/header";
 import Info from "./components/info";

@@ -1,15 +1,15 @@
 "use client";
 import React, {useEffect, useRef} from 'react';
-import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-L.Icon.Default.imagePath = '/public/';
-
 export default function Region() {
-    const mapRef = useRef(null);
     const mapId = 'map-section';
+    const mapRef = useRef(null);
 
     useEffect(() => {
+        const L = require('leaflet');
+        L.Icon.Default.imagePath = '/';
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -32,35 +32,34 @@ export default function Region() {
     }, []);
 
     const initMap = () => {
-        if (typeof window !== 'undefined') {
-            const map = L.map('map', {
-                center: [-8.8137, -36.9541],
-                zoom: 7,
-                zoomControl: false,
+        const L = require('leaflet');
+        const map = L.map(mapRef.current, {
+            center: [-8.8137, -36.9541],
+            zoom: 7,
+            zoomControl: false,
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        setTimeout(() => {
+            map.flyTo([-8.047562, -34.877001], 13, {
+                animate: true,
+                duration: 2,
             });
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            }).addTo(map);
-
             setTimeout(() => {
-                map.flyTo([-8.047562, -34.877001], 13, {
-                    animate: true,
-                    duration: 2,
-                });
-
-                setTimeout(() => {
-                    L.marker([-8.047562, -34.877001], {
-                        icon: new L.Icon({
-                            iconUrl: '/marker-icon.png',
-                            shadowUrl: '/marker-shadow.png',
-                        }),
-                    }).addTo(map)
-                        .bindPopup('<b>Recife e Região</b>')
-                        .openPopup();
-                }, 2000);
-            }, 1000);
-        }
+                L.marker([-8.047562, -34.877001], {
+                    icon: new L.Icon({
+                        iconUrl: '/marker-icon.png',
+                        shadowUrl: '/marker-shadow.png',
+                    }),
+                }).addTo(map)
+                    .bindPopup('<b>Recife e Região</b>')
+                    .openPopup();
+            }, 2000);
+        }, 1000);
     };
 
     return (
@@ -72,7 +71,8 @@ export default function Region() {
             </div>
             <div className="map-section__content flex gap-5 w-full justify-between flex-wrap">
                 <div className="map-section__map flex-1 max-w-[50%] min-w-[300px]">
-                    <div className="map-section__map-container h-[400px] w-full rounded-lg shadow-lg" id="map"></div>
+                    <div className="map-section__map-container h-[400px] w-full rounded-lg shadow-lg"
+                         ref={mapRef}></div>
                 </div>
                 <div className="map-section__text-content flex-1 max-w-[50%] min-w-[300px] flex items-center">
                     <p className="map-section__description text-base text-gray-700 leading-6 text-justify m-0 p-2 bg-gray-50 border-2 border-teal-300 rounded">
