@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fisioterapia Pediátrica
 
-## Getting Started
+**Objetivo:** Criar uma página de destino (landing page) focada em conectar clientes/pacientes diretamente com o profissional de saúde para agendamentos de consultas e avaliações.
 
-First, run the development server:
+**Veja o site no ar em:** https://roberta-fisio2.netlify.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🛠 **O projeto foi desenvolvido com as seguintes tecnologias:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔷 **Next.js:** Um framework React para desenvolvimento de aplicações web escaláveis e otimizadas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔷 **Tailwind CSS:** Framework de CSS utilitário que possibilita um design responsivo e elegante com rapidez e eficiência.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+🔷 **FontAwesome:** Ícones vetoriais para aprimorar a interface do usuário.
 
-## Learn More
+🔷 **Leaflet:** Biblioteca de mapas interativos para visualização geográfica.
 
-To learn more about Next.js, take a look at the following resources:
+🔷 **react-scroll:** Para rolagem suave entre seções da página.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔷 **react-slick:** Carrossel responsivo para uma melhor apresentação de conteúdo.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🔷 **Layout Responsivo:** Garantindo uma ótima experiência tanto em desktop quanto em dispositivos móveis.
