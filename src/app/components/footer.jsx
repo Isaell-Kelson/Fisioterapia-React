@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-teal-300 mt-20">
+        <footer className="bg-teal-300 2xl:mt-20 sm:mt-14">
             <svg
                 className="relative w-full"
                 viewBox="0 0 1536 200"
@@ -26,11 +26,13 @@ export default function Footer() {
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="flex flex-col items-center">
                     <div className="flex items-center mb-4">
-                        <Image src={Logo} className="lg:w-44 lg:h-44" alt="Logo"/>
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-fuchsia-400 ml-2">
+                        <Image src={Logo} className="w-24 h-24 md:w-32 md:h-32 lg:w-44 lg:h-44" alt="Logo"/>
+                        <span
+                            className="self-center text-xl md:text-2xl font-semibold whitespace-nowrap text-fuchsia-400 ml-2">
                             Roberta Karlize
                         </span>
                     </div>
+
                     <p className="text-center text-gray-600 dark:text-gray-400 mb-6">
                         Meu objetivo é proporcionar uma recuperação rápida e eficaz para você.
                     </p>
